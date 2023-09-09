@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
+import com.simplilearn.spring.core.bean.Employee;
 import com.simplilearn.spring.core.bean.Student;
 
 /**
@@ -27,8 +28,12 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		Student student = (Student) context.getBean("studentbean");
+		
+		Employee employee = (Employee) context.getBean("employeebean");
 
 		student.displayStudentInfo();
+		
+		employee.displayEmployeeInfo();
 
 	}
 }

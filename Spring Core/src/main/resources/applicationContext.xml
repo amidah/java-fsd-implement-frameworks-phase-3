@@ -6,8 +6,26 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-<bean id="studentbean" class="com.simplilearn.spring.core.bean.Student">
-	<property name="name" value="John Smith"></property>
-</bean>
+	<bean id="studentbean"
+		class="com.simplilearn.spring.core.bean.Student">
+		<property name="name" value="John Smith"></property>
+	</bean>
+
+	<bean id="addressbean"
+		class="com.simplilearn.spring.core.bean.Address">
+		<constructor-arg value="Noida"></constructor-arg>
+		<constructor-arg value="Uttar Pradesh"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="employeebean"
+		class="com.simplilearn.spring.core.bean.Employee">
+		<constructor-arg value="001" type="int"></constructor-arg>
+		<constructor-arg value="Sam"></constructor-arg>
+		<constructor-arg>
+			<ref bean="addressbean" />
+		</constructor-arg>
+	</bean>
+
 
 </beans>
