@@ -9,6 +9,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import com.simplilearn.spring.core.bean.Employee;
+import com.simplilearn.spring.core.bean.Question;
 import com.simplilearn.spring.core.bean.Student;
 
 /**
@@ -30,10 +31,14 @@ public class App {
 		Student student = (Student) context.getBean("studentbean");
 		
 		Employee employee = (Employee) context.getBean("employeebean");
+		
+		Question question = (Question) context.getBean("questionbean");
 
 		student.displayStudentInfo();
 		
 		employee.displayEmployeeInfo();
+		
+		question.displayQuestionInfo();
 
 	}
 }

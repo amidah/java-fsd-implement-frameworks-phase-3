@@ -11,10 +11,38 @@
 		<property name="name" value="John Smith"></property>
 	</bean>
 
-	<bean id="addressbean"
+	<bean id="addressbean1"
 		class="com.simplilearn.spring.core.bean.Address">
 		<constructor-arg value="Noida"></constructor-arg>
 		<constructor-arg value="Uttar Pradesh"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="addressbean2"
+		class="com.simplilearn.spring.core.bean.Address">
+		<constructor-arg value="Greater Noida"></constructor-arg>
+		<constructor-arg value="Uttar Pradesh"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="addressbean3"
+		class="com.simplilearn.spring.core.bean.Address">
+		<constructor-arg value="Itanagar"></constructor-arg>
+		<constructor-arg value="Arunachal Pradesh"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="addressbean4"
+		class="com.simplilearn.spring.core.bean.Address">
+		<constructor-arg value="Dispur"></constructor-arg>
+		<constructor-arg value="Assam"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="addressbean5"
+		class="com.simplilearn.spring.core.bean.Address">
+		<constructor-arg value="Panaji"></constructor-arg>
+		<constructor-arg value="Goa"></constructor-arg>
 		<constructor-arg value="India"></constructor-arg>
 	</bean>
 
@@ -23,9 +51,53 @@
 		<constructor-arg value="001" type="int"></constructor-arg>
 		<constructor-arg value="Sam"></constructor-arg>
 		<constructor-arg>
-			<ref bean="addressbean" />
+			<list>
+				<ref bean="addressbean1" />
+				<ref bean="addressbean2" />
+				<ref bean="addressbean3" />
+				<ref bean="addressbean4" />
+				<ref bean="addressbean5" />
+			</list>
 		</constructor-arg>
 	</bean>
 
+	<bean id="userbean1" class="com.simplilearn.spring.core.bean.User">
+		<constructor-arg value="001" type="int"></constructor-arg>
+		<constructor-arg value="Roy"></constructor-arg>
+		<constructor-arg value="roy.1@gmail.com"></constructor-arg>
+	</bean>
 
+	<bean id="userbean2" class="com.simplilearn.spring.core.bean.User">
+		<constructor-arg value="002" type="int"></constructor-arg>
+		<constructor-arg value="James"></constructor-arg>
+		<constructor-arg value="james.2@gmail.com"></constructor-arg>
+	</bean>
+
+	<bean id="answerbean1"
+		class="com.simplilearn.spring.core.bean.Answer">
+		<constructor-arg value="001" type="int"></constructor-arg>
+		<constructor-arg
+			value="Spring Framework is lightweight and flexible."></constructor-arg>
+		<constructor-arg value="30/12/2023"></constructor-arg>
+	</bean>
+
+	<bean id="answerbean2"
+		class="com.simplilearn.spring.core.bean.Answer">
+		<constructor-arg value="002" type="int"></constructor-arg>
+		<constructor-arg value="Spring Framework is focused."></constructor-arg>
+		<constructor-arg value="31/12/2023"></constructor-arg>
+	</bean>
+
+	<bean id="questionbean"
+		class="com.simplilearn.spring.core.bean.Question">
+		<constructor-arg value="001" type="int"></constructor-arg>
+		<constructor-arg
+			value="What are Spring Framework advantages?"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key-ref="answerbean1" value-ref="userbean1"></entry>
+				<entry key-ref="answerbean2" value-ref="userbean2"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
 </beans>
