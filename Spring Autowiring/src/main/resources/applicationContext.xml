@@ -6,11 +6,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="departmentbean"
+	<!-- <bean id="departmentbean"
 		class="com.simplilearn.spring.autowiring.bean.Department">
 		<property name="id" value="1"></property>
 		<property name="name" value="IT"></property>
-	</bean>
+	</bean> -->
 	<bean id="department"
 		class="com.simplilearn.spring.autowiring.bean.Department">
 		<property name="id" value="2"></property>
@@ -23,10 +23,16 @@
 		<property name="name" value="Sam"></property>
 	</bean> -->
 	
-	<bean id="employeebean"
+	<bean id="employee1"
 		class="com.simplilearn.spring.autowiring.bean.Employee"
-		autowire="byType">
+		autowire="byName">
 		<property name="id" value="1"></property>
 		<property name="name" value="Sam"></property>
+	</bean>
+	<bean id="employee2"
+		class="com.simplilearn.spring.autowiring.bean.Employee"
+		autowire="byType">
+		<property name="id" value="2"></property>
+		<property name="name" value="John"></property>
 	</bean>
 </beans>
