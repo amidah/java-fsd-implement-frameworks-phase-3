@@ -4,17 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class Employee {
 
-	public Department getDepartment() {
-		return department;
-	}
-
-
-
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-
-
 
 	private int id;
 
@@ -45,6 +34,18 @@ public class Employee {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+
+
+	public Department getDepartment() {
+		return department;
+	}
+
+
+
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 
 
