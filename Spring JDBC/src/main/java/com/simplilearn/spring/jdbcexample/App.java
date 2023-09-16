@@ -1,5 +1,7 @@
 package com.simplilearn.spring.jdbcexample;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -23,10 +25,15 @@ public class App
 //        	System.out.println("Operation Successful");
 //        }
         
-        Boolean status = employeeDao.saveEmployeeByPreparedStatement(new Employee(102, "Wayne", "wayne@1023", "wayne@hotmail.com", "AUS"));
-    
-        if(!status) {
-        	System.out.println("Operation Successful");
+//        Boolean status = employeeDao.saveEmployeeByPreparedStatement(new Employee(102, "Wayne", "wayne@1023", "wayne@hotmail.com", "AUS"));
+//    
+//        if(!status) {
+//        	System.out.println("Operation Successful");
+//        }
+        
+        List<Employee> empList= employeeDao.getEmplList();
+        for(Employee e : empList) {
+        	System.out.println(e);
         }
     }
 }

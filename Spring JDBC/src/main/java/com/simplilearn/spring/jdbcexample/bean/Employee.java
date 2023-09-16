@@ -61,4 +61,10 @@ public class Employee {
 		this.country = country;
 	}
 
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", country="
+				+ country + "]";
+	}
+
 }
