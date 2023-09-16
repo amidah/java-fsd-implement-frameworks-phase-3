@@ -31,9 +31,11 @@ public class App
 //        	System.out.println("Operation Successful");
 //        }
         
-        List<Employee> empList= employeeDao.getEmplList();
-        for(Employee e : empList) {
-        	System.out.println(e);
-        }
+//        List<Employee> empList= employeeDao.getEmplList();
+//        for(Employee e : empList) {
+//        	System.out.println(e);
+//        }
+        
+        employeeDao.saveEmpWithNamedQuery(new Employee(103, "Chile", "chile@1000", "chile@outlook.com", "UK"));
     }
 }

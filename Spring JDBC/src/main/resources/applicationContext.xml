@@ -17,8 +17,13 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 <property name="dataSource" ref="mysqldatasource"></property>
 </bean>
 
+<bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+<constructor-arg ref="mysqldatasource"></constructor-arg>
+</bean>
+
 <bean id="employeeDao" class="com.simplilearn.spring.jdbcexample.dao.EmployeeDao">
 <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+<property name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate"></property>
 </bean>
 
 </beans>
