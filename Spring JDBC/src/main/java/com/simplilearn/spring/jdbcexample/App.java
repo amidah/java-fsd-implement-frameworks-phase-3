@@ -18,8 +18,14 @@ public class App
         
         EmployeeDao employeeDao = (EmployeeDao) context.getBean("employeeDao");
     
-        int status = employeeDao.deleteEmployee(100);
-        if(status > 0) {
+//        int status = employeeDao.saveEmployee(new Employee(100, "Jonathan", "Jon@1468", "jon.rambo@gmail.com", "USA"));
+//        if(status > 0) {
+//        	System.out.println("Operation Successful");
+//        }
+        
+        Boolean status = employeeDao.saveEmployeeByPreparedStatement(new Employee(102, "Wayne", "wayne@1023", "wayne@hotmail.com", "AUS"));
+    
+        if(!status) {
         	System.out.println("Operation Successful");
         }
     }
