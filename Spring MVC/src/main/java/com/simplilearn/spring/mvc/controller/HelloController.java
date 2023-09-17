@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HelloController {
@@ -20,9 +21,8 @@ public class HelloController {
 //	}
 	
 	@RequestMapping("/view")
-	public String display(HttpServletRequest req, Model model) {
-		String username = req.getParameter("name");
-		String password = req.getParameter("pass");
+	public String display(@RequestParam("name")String username, @RequestParam("pass")String password, Model model) {
+		
 		
 		if(password.equals("admin")) {
 			String message = "Hello " + username;
