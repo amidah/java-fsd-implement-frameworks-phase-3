@@ -1,6 +1,5 @@
 package com.simplilearn.springboot.crud.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,30 +21,30 @@ public class BookController {
 	private BookService bookServie;
 	
 	@GetMapping("/books")
-	private List<Book> getAllBooks(){
+	public List<Book> getAllBooks(){
 		
 		return bookServie.getAllBooks();
 		
 	}
 	
 	@PostMapping("/save/book")
-	private int saveBook(@RequestBody Book book) {
+	public int saveBook(@RequestBody Book book) {
 		return bookServie.save(book);
 	}
 	
 	@PostMapping("/save/books")
-	private List<Integer> saveAllBooks(@RequestBody List<Book> books) {
+	public List<Integer> saveAllBooks(@RequestBody List<Book> books) {
 		return bookServie.saveAll(books);
 	}
 	
 	
 	@PutMapping("/update/book")
-	private int updateBook(@RequestBody Book book) {
+	public int updateBook(@RequestBody Book book) {
 		return bookServie.update(book);
 	}
 	
 	@DeleteMapping("/delete/book/{bookid}")
-	private void deleteBook(@PathVariable("bookid") int bookId) {
+	public void deleteBook(@PathVariable("bookid") int bookId) {
 		bookServie.deleteBookById(bookId);
 	}
 	
